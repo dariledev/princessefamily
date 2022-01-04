@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Your description">
+    <meta name="author" content="Your name">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on Facebook, Twitter, LinkedIn -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
+
+    <!-- Webpage Title -->
+    <title>Article Details - Desi</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome-all.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/swiper.css' %}" rel="stylesheet">
+	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{% static 'images/favicon.png' %}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
+        <div class="container">
+
+            <!-- Image Logo -->
+            <!--<a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a>--> 
+
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <!-- <a class="navbar-brand logo-text" href="index.html">Desi</a> -->
+
+            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Acceuil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#projects">Article</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                            <li><a class="dropdown-item" href="{% url 'register' %}">Profile celibataire</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
+                            <li><div class="dropdown-divider"></div></li>
+                            <li><a class="dropdown-item" href="#">Profile donateur</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+                </ul>
+                <span class="nav-item social-icons">
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="#your-link">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-twitter fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </span>
+            </div> <!-- end of navbar-collapse -->
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Nous faisons des Dons</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <p>L'association_ewaga_family c'est aider les jeunes parents demunis, Les orphelins et les voeuves Reconcilié les familles divisées. <br>
+                aider les personnes seules et vulnerables et Favoriser les rencontres serieuses</p>
+
+                <p>Pour nous, Oeuvrer dans l'humanitaire est le combat le plus noble que l'homme peu mener dans sa vie car cela temoigne de l'importance et de la consideration
+                    que l'on accorde a sa propre existance.
+                </p>
+                <h2>Qui a charité pour son prochain a la crainte de Dieu</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/enfant.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/fam.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/projet0.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/solidaire.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/elle.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/riz.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/carton.jpg' %}" height="400" width="300" alt="alternative">
+                    <img class="img-fluid mt-5 mb-3" src="{% static 'images/ew.jpg' %}" height="400" width="300" alt="alternative">
+
+
+                    
+
+                    <h4>Tarif d'hadésion: 20€</h4>
+                    <p>Elle vous offres la possibilité de participer a nos activités et de beneficier des services au seins de notre structure d'etre assurer lors de toute ces activités.
+                        De participer a l'assemblée generale de l'association
+                    </p>
+                    <h4><a href="{% url 'register' %}"> inscrivez vous ici</a></h4>
+            </div>
+
+            <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="footer-col first">
+                                <h6>A propos</h6>
+                                <!--<p class="p-small">He oppose at thrown desire of no. Announcing impression unaffected day his are unreserved indulgence. Him hard find read are you</p>
+                            </div>--> <!-- end of footer-col -->
+                            <div class="footer-col second">
+                                <h6>Liens</h6>
+                                <ul class="list-unstyled li-space-lg p-small">
+                                    <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
+                                    <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
+                                    <li>Menu: <a href="#header">Acceuil</a>, <a href="#services">Rurbique</a>, <a href="#projects">Projects</a>, <a href="#contact">Contact</a></li>
+                                </ul>
+                            </div> <!-- end of footer-col -->
+                            <div class="footer-col third">
+                                <span class="fa-stack">
+                                    <a href="https://fr-fr.facebook.com/assoewagafamily/">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                                    </a>
+                                </span>
+                                <span class="fa-stack">
+                                    <a href="#your-link">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x"></i>
+                                    </a>
+                                </span>
+                                <span class="fa-stack">
+                                    <a href="#your-link">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                                    </a>
+                                </span>
+                                <span class="fa-stack">
+                                    <a href="#your-link">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-instagram fa-stack-1x"></i>
+                                    </a>
+                                </span>
+                                <p class="p-small"><a href="mailto:Ewagadouze@yahoo.com "><strong>contact@site.com</strong></a></p>
+                            </div> <!-- end of footer-col -->
+                        </div> <!-- end of col -->
+                    </div> <!-- end of row -->
+                </div> <!-- end of container -->
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="p-small">Copyright © <a href="#your-link">association_ewaga_family</a></p>
+                        </div> <!-- end of col -->
+                    </div> <!-- enf of row -->
+        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="p-small">Distributed by:  <a href="" target="_blank">dariledev</a></p>
+                        </div> <!-- end of col -->
+                    </div> <!-- enf of row -->
+                </div> <!-- end of container -->
+            </div>
+
+                
+
+
+<button onclick="topFunction()" id="myBtn">
+    <img src="{% static 'images/up-arrow.png' %}" alt="alternative">
+</button>
+<!-- end of back to top button -->
+    
+<!-- Scripts -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script> <!-- Bootstrap framework -->
+<script src="{% static 'js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+<script src="{% static 'js/purecounter.min.js' %}"></script> <!-- Purecounter counter for statistics numbers -->
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script> <!-- Isotope for filter -->
+<script src="{% static 'js/scripts.js' %}"></script> <!-- Custom scripts -->
+</body>
+</html>

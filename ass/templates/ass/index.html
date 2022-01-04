@@ -19,7 +19,7 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-    <title>Desi Webpage Title</title>
+    <title>Acceuil Page</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
 	<link href="{% static 'css/styles.css' %}" rel="stylesheet">
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="{% static 'images/favicon.png' %}">
+ 
 </head>
 <body>
     
@@ -57,16 +57,16 @@
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Articles</a>
+                        <a class="nav-link" href="#projects">Projets</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                            <li><a class="dropdown-item" href="article.html">Touts Articles</a></li>
+                            <li><a class="dropdown-item" href="{% url 'register' %}">Profile celibataire</a></li>
                             <li><div class="dropdown-divider"></div></li>
                             <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
                             <li><div class="dropdown-divider"></div></li>
-                            <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                            <li><a class="dropdown-item" href="{% url 'projets' %}">Profile donateur</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -100,7 +100,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="h1-large">Association Ewaga Family</h1>
-                        <a class="btn-solid-lg" href="{% url 'register' %}">Decouvrir</a>
+                        <a class="btn-solid-lg" href="{% url 'register' %}">je fais un don</a>
                     </div> <!-- end of col -->
                 </div> <!-- end of row -->
             </div> <!-- end of container -->
@@ -211,7 +211,7 @@
                             Vous êtes célibataires, divorcés(es) ou veufs(ves),
                             Vous désirez être en couple ou fonder une famille, cherchant une relation amoureuse stable pour mariage ou remariage ?
                             Vous n'avez pas tort.</p>
-                        <a class="read-more no-line green" href="{% url 'detail' %}">Plus<span class="fas fa-long-arrow-alt-right"></span></a>
+                        <a class="read-more no-line green" href="{% url 'error' %}">Plus<span class="fas fa-long-arrow-alt-right"></span></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -257,7 +257,7 @@
                         <p>En faisant un don, vous bénéficiez également d’un Espace Donateur et des fonctionnalités des enregistrés. Vous pourrez y retrouver<br> à tout moment l’historique de vos dons
                             et choisir vos préférences de communication
                                Lors de votre premier don</p>
-                        <a class="read-more no-line green" href="">Plus <span class="fas fa-long-arrow-alt-right"></span></a>
+                        <a class="read-more no-line green" href="{% url 'error' %}">Plus <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -271,7 +271,7 @@
 		<div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="h2-heading">Nos Articles</h2>
+                    <h2 class="h2-heading">Nos Projets</h2>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -280,30 +280,30 @@
                     <!-- Filter -->
                     <div class="button-group filters-button-group">
                         <button class="button is-checked" data-filter="*">TOUT</button>
-                        <button class="button" data-filter=".business">RENCONTRE</button>
-                        <button class="button" data-filter=".finance">DONATEUR</button>
-                        <button class="button" data-filter=".software">CULTURE</button>
+                        <!--<button class="button" data-filter=".business">Evenements</button>
+                        <button class="button" data-filter=".finance">DON</button>
+                        <button class="button" data-filter=".software">CULTURE</button>-->
                     </div> <!-- end of button group -->
                     <div class="grid">
                         <div class="element-item finance">
-                            <a href="#article.html">
-                                <img class="img-fluid" src="{% static 'images/go.jpg' %}" alt="alternative">
-                                <p><strong>Si tu veux voir la lune</strong> -</p>
+                            <a href="{% url 'projets' %}">
+                                <img class="img-fluid" src="{% static 'images/event.png' %}" title="voir l'article" alt="alternative">
+                                <p><strong>Voir l'article</strong></p>
                             </a>
                         </div>
                         <div class="element-item finance">
-                            <a href="#article.html">
-                                <img class="img-fluid" src="{% static 'images/man.jpg' %}" alt="alternative">
-                                <p><strong>Faire Don</strong> -</p>
+                            <a href="{% url 'projets_don' %}">
+                                <img class="img-fluid" src="{% static 'images/faisons.png' %}" title="voir l'article" alt="alternative">
+                                <p><strong>Voir l'article</strong></p>
                             </a>
                         </div>
                         <div class="element-item finance">
-                            <a href="#article.html">
-                                <img class="img-fluid" src="{% static 'images/rencontre.jpg' %}" alt="alternative">
-                                <p><strong>Rencontre</strong> - </p>
+                            <a href="{% url 'detail' %}">
+                                <img class="img-fluid" src="{% static 'images/rdesc.png' %}" alt="alternative">
+                                <p><strong>Voir l'article</strong></p>
                             </a>
                         </div>
-                        <div class="element-item business finance">
+                        <!--<div class="element-item business finance">
                             <a href="#article.html">
                                 <img class="img-fluid" src="{% static 'images/jeunes.jpg' %}" alt="alternative">
                                 <p><strong>Don Libre</strong> -</p>
@@ -340,7 +340,7 @@
                                 <p><strong>Big business</strong> -</p>
                             </a>
                         </div>
-                    </div> <!-- end of grid -->
+                    </div>-->
                     <!-- end of filter -->
                     
                 </div> <!-- end of col -->
@@ -451,7 +451,7 @@
                     <ul class="list-unstyled li-space-lg">
                         <li><i class="fas fa-map-marker-alt"></i> &nbsp;Chatin Besson, 16220, Ecuras, France</li>
                         <li><i class="fas fa-phone"></i> &nbsp;<a href="tel:00817202212">CONTACT INFO : 0033755778519/ 0033755933232</a></li>
-                        <li><i class="fas fa-envelope"></i> &nbsp;<a href="mailto: Assoewagafamily@yahoo.fr"> Assoewagafamily@yahoo.fr</a></li>
+                        <li><i class="fas fa-envelope"></i> &nbsp;<a href="mailto: Assoewagafamily@yahoo.fr"> Assoewagafamily@yahoo.com</a></li>
                     </ul>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
