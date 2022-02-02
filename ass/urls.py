@@ -15,6 +15,10 @@ urlpatterns = [
     path('ajouter/', views.add, name='add'),
     path('login/', views.login_user, name='login'),
     path('checkout/', views.payement, name='payement'),
+    path('addQuestion/', views.addQuestion,name='addQuestion'),
+    path('home/', views.home,name='home'),
+
+
 
 
     

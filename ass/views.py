@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 from ass.models import PostArticle
-from .forms import CreateUser, PostForm
+from .forms import CreateUser, PostForm, addQuestionform, QuesModel
 
 # Create your views here.
 
@@ -23,7 +23,7 @@ def login_user(request):
     user = authenticate(request, username=username, password=password)
     if user is not None:
         login(request, user)
-        return redirect('index')
+        return redirect('home')
     return render(request, 'ass/login.html')
 
 
@@ -68,3 +68,54 @@ def add(request):
             postform.save()
             return redirect('projets')
     return render(request, 'ass/add.html', {'postform':postform})
+
+
+def addQuestion(request):    
+    if request.user.is_staff:
+        form=addQuestionform()
+        if(request.method=='POST'):
+            form=addQuestionform(request.POST)
+            if(form.is_valid()):
+                form.save()
+                return redirect('/')
+        context={'form':form}
+        return render(request,'ass/addQuestion.html',context)
+    else: 
+        return redirect('home')
+
+
+
+
+def home(request):
+    if request.method == 'POST':
+        print(request.POST)
+        questions=QuesModel.objects.all()
+        score=0
+        wrong=0
+        correct=0
+        total=0
+        for q in questions:
+            total+=1
+            print(request.POST.get(q.question))
+            print(q.ans)
+            print()
+            if q.ans ==  request.POST.get(q.question):
+                score+=10
+                correct+=1
+            else:
+                wrong+=1
+
+        context = {
+            'score':score,
+            'time': request.POST.get('timer'),
+            'correct':correct,
+            'wrong':wrong,
+            'total':total
+        }
+        return render(request,'ass/result.html',context)
+    else:
+        questions=QuesModel.objects.all()
+        context = {
+            'questions':questions
+        }
+        return render(request,'ass/home.html',context)
